@@ -62,3 +62,33 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Working Process From Root : 
+
+Step 1 : composer create-project laravel/laravel stripe 
+
+Step 2 : composer require stripe/stripe-php
+
+Step 3 : composer require cartalyst/stripe-laravel
+
+Step 4 : Adding >  config/app.php 
+
+'providers' => [
+    .....
+    Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
+],
+
+'aliases' => [
+    ......
+    'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
+],
+
+Step 5 : php artisan make:controller StripePaymentController  (Update code in this project )
+
+Step 6 : Route Define
+
+Step 7 : View Blade File
+
+
+####################### END ####################
+
